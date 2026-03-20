@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - AgileJob</title>
+</head>
+<body>
+
+    <div class="perfil-container">
+        <div class="foto-perfil"></div>
+        <h2 class="nome-usuario">NOME DO CANDIDATO</h2>
+        <p class="cargo-desejado">Desenvolvedor Full Stack</p>
+
+        <div class="info-secao">
+            <h3>Resumo Profissional</h3>
+            <textarea class="campo-texto">Conte um pouco sobre sua experiência...</textarea>
+        </div>
+
+        <div class="info-secao">
+            <h3>Habilidades</h3>
+            <div class="tags-habilidade">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+                <button class="btn-add">+</button>
+            </div>
+        </div>
+
+        <button class="btn-salvar">Salvar Alterações</button>
+        <a href="agilejob.html" class="voltar">Sair do Perfil</a>
+    </div>
+
+<style>
+    body {
+        background-color: #000;
+        color: #fff;
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+        padding: 40px 0;
+    }
+
+    .perfil-container {
+        width: 100%;
+        max-width: 500px;
+        background-color: #000;
+        border: 6px solid #a90000;
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .foto-perfil {
+        width: 100px;
+        height: 100px;
+        background-color: #333;
+        border: 3px solid #a90000;
+        border-radius: 50%;
+        margin: 0 auto 15px;
+    }
+
+    .nome-usuario {
+        color: #a90000;
+        letter-spacing: 2px;
+        margin-bottom: 5px;
+    }
+
+    .cargo-desejado {
+        color: #888;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+
+    .info-secao {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .info-secao h3 {
+        font-size: 14px;
+        color: #a90000;
+        text-transform: uppercase;
+        border-bottom: 1px solid #333;
+        padding-bottom: 5px;
+    }
+
+    .campo-texto {
+        width: 100%;
+        height: 80px;
+        background: #111;
+        border: 1px solid #333;
+        color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        resize: none;
+    }
+
+    .tags-habilidade {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    .tag {
+        background: #a90000;
+        padding: 5px 12px;
+        border-radius: 15px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .btn-add {
+        background: #333;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }
+
+    .btn-salvar {
+        width: 100%;
+        padding: 15px;
+        background-color: #fff;
+        color: #000;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 20px;
+        text-transform: uppercase;
+    }
+
+    .voltar {
+        display: block;
+        margin-top: 15px;
+        color: #a90000;
+        text-decoration: none;
+        font-size: 12px;
+    }
+</style>
+</body>
+</html>
