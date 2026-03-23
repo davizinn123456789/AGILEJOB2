@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,7 +9,13 @@
 <body>
 
     <div class="perfil-container">
-        <div class="foto-perfil"></div>
+        <div class="foto-container">
+            <label for="upload-foto" class="foto-perfil" id="preview-foto">
+                <span>Alterar Foto</span>
+            </label>
+            <input type="file" id="upload-foto" accept="image/*" style="display: none;">
+        </div>
+
         <h2 class="nome-usuario">NOME DO CANDIDATO</h2>
         <p class="cargo-desejado">Desenvolvedor Full Stack</p>
 
@@ -31,6 +38,26 @@
         <a href="agilejob.html" class="voltar">Sair do Perfil</a>
     </div>
 
+<script>
+    // Lógica para mostrar a prévia da imagem assim que o usuário seleciona o arquivo
+    const inputFoto = document.getElementById('upload-foto');
+    const previewFoto = document.getElementById('preview-foto');
+
+    inputFoto.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                previewFoto.style.backgroundImage = `url('${event.target.result}')`;
+                previewFoto.style.backgroundSize = 'cover';
+                previewFoto.style.backgroundPosition = 'center';
+                previewFoto.querySelector('span').style.display = 'none'; // Esconde o texto ao carregar a foto
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
+
 <style>
     body {
         background-color: #000;
@@ -51,19 +78,46 @@
         text-align: center;
     }
 
+    /* Estilização da Foto Interativa */
+    .foto-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
     .foto-perfil {
-        width: 100px;
-        height: 100px;
-        background-color: #333;
+        width: 120px;
+        height: 120px;
+        background-color: #1a1a1a;
         border: 3px solid #a90000;
         border-radius: 50%;
-        margin: 0 auto 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.3s;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .foto-perfil:hover {
+        background-color: #333;
+        border-color: #fff;
+    }
+
+    .foto-perfil span {
+        font-size: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #a90000;
+        text-align: center;
     }
 
     .nome-usuario {
         color: #a90000;
         letter-spacing: 2px;
         margin-bottom: 5px;
+        text-transform: uppercase;
     }
 
     .cargo-desejado {
@@ -94,6 +148,7 @@
         padding: 10px;
         border-radius: 8px;
         resize: none;
+        box-sizing: border-box;
     }
 
     .tags-habilidade {
@@ -132,6 +187,12 @@
         cursor: pointer;
         margin-top: 20px;
         text-transform: uppercase;
+        transition: 0.3s;
+    }
+
+    .btn-salvar:hover {
+        background-color: #a90000;
+        color: white;
     }
 
     .voltar {
